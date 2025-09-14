@@ -1,90 +1,83 @@
-Auto Scroller & Clicker: 
+# Auto Scroller \& Clicker
 
-A simple yet powerful Python script that automates the process of scrolling through an application window to find and click a specific image. 
+A simple yet powerful Python script that automates the process of scrolling through an application window to find and click a specific image.
 
-(To use in wabbajack: Run Wabbajack and begin downloading your modlist. Once a new window opens, redirecting you onto Nexus page, take a screenshot of the SLOW DONWLOAD button.Save this image as a target_image.png file and run the script as instructed below)
+> **To use with Wabbajack:**
+> Run Wabbajack and begin downloading your modlist. Once a new window opens and redirects you to the Nexus page, take a screenshot of the "SLOW DOWNLOAD" button. Save this image as `target_image.png` and follow the instructions below.
 
-The script runs in a continuous loop, making it ideal for repetitive tasks, automated testing, or interacting with applications that load content dynamically.
+***
 
-
-What it Does?
+## What It Does
 
 The script repeatedly performs the following actions in a loop:
 
-Searches: It scans the entire screen to find a specified target image (target_image.png).
+1. **Searches**: Scans the entire screen to find a specified target image (`target_image.png`).
+2. **Clicks**: If the image is found, moves the mouse cursor to the center of the image and clicks it.
+3. **Scrolls**: If the image is not found, scrolls the active window down.
+4. **Waits**: Waits for a configurable interval before repeating the process.
 
-Clicks: If the image is found, it moves the mouse cursor to the center of the image and clicks it.
+This loop continues indefinitely until manually stopped.
 
-Scrolls: If the image is not found, it scrolls the active window down.
+***
 
-Waits: After either action, it waits for a configurable interval before repeating the process.
+## Features
 
-This loop continues indefinitely until the user manually stops the script.
+- **Continuous Operation**: Runs in an infinite loop until stopped.
+- **Image Recognition**: Utilizes PyAutoGUI's image recognition to locate elements on the screen.
+- **Configurable**: Easily adjust the target image, time interval, scroll distance, and match confidence.
+- **Robust Error Handling**: Gracefully handles cases where the image isn't on screen.
+- **User-Friendly Feedback**: Prints its current action (clicking, scrolling, waiting) to the console.
 
+***
 
-Features:
+## Prerequisites
 
-Continuous Operation: Runs in an infinite loop until stopped.
+Make sure you have Python installed. Then install the necessary libraries:
 
-Image Recognition: Uses pyautogui's image recognition to locate elements on the screen.
-
-Configurable: Easily adjust the target image, time interval, scroll distance, and match confidence.
-
-Robust Error Handling: Gracefully handles cases where the image isn't on screen without crashing.
-
-User-Friendly Feedback: Prints its current action (clicking, scrolling, waiting) to the console.
-
-
-Prerequisites
-
-Before running the script, you need to have Python installed on your system. 
-
-Then, install the necessary libraries using pip:
-
+```bash
 pip install pyautogui opencv-python
+```
 
-Note: opencv-python is a required dependency for the image recognition features of pyautogui.
+> _Note_: `opencv-python` is required for image recognition features.
 
+***
 
-How to Use:
+## How to Use
 
-Capture the Target Image: Take a clear screenshot of the button, icon, or element you want the script to click. Save this image as a .png file (e.g., target_image.png).
+1. **Capture the Target Image**
+Take a clear screenshot of the button, icon, or element you want to click. Save this as a `.png` file (e.g., `target_image.png`).
+2. **File Placement**
+Place the image in the **same folder** as `auto_scroller_clicker.py`.
+3. **Configure the Script**
+Edit `auto_scroller_clicker.py` and adjust the following variables in the **CONFIGURATION** section:
+    - `IMAGE_TO_FIND`: Filename of your target image.
+    - `INTERVAL_SECONDS`: Time to wait between actions.
+    - `SCROLL_AMOUNT`: Pixels to scroll (negative value for scrolling down).
+    - `CONFIDENCE_LEVEL`: Accuracy for image matching (between 0.0 and 1.0).
+4. **Run the Script**
+    - Open the application to automate and ensure its window is active.
+    - Open your terminal or command prompt.
+    - Navigate to the script and image directory.
+    - Run:
 
-File Placement: Place the saved image file in the exact same folder as the auto_scroller_clicker.py script.
+```bash
+python auto_scroller_clicker.py
+```
 
-Configure the Script: Open auto_scroller_clicker.py in a text editor and modify the variables in the CONFIGURATION section to fit your needs:
+    - You have a 3-second countdown to focus your target application window.
+5. **Stop the Script**
+Switch back to the terminal and press **Ctrl + C**.
 
-IMAGE_TO_FIND: The filename of your target image.
+***
 
-INTERVAL_SECONDS: The time to wait between actions.
+## ⚠️ Important Warnings
 
-SCROLL_AMOUNT: The number of pixels to scroll (use a negative value to scroll down).
+- **Mouse \& Keyboard Control**: This script takes control of your mouse and keyboard. Do not leave it running unattended.
+- **Fail-Safe**: PyAutoGUI has a built-in safety feature. If the script misbehaves, **move your mouse cursor to any screen corner** to stop immediately.
+- **Permissions**: On some systems (esp. macOS), you may need to grant accessibility permissions for mouse/screen control.
 
-CONFIDENCE_LEVEL: The accuracy for image matching (a value between 0.0 and 1.0). You might need to lower this from the default 0.8 if the target image has slight variations.
+***
 
-Run the Script:
+## License
 
-Open the application you want to automate and make sure its window is active.
-
-Open a terminal or command prompt.
-
-Navigate to the directory where you saved the script and image
-
-Execute the script using the command:
-
-python auto_scroll_click.py
-
-
-You will have a 3-second countdown to switch focus to your target application window.
-
-Stop the Script: To stop the automation, switch back to the terminal window and press Ctrl + C.
-
-⚠️ Important Warnings:
-
-This script takes control of your mouse and keyboard. Do not leave it running unattended.
-
-Fail-Safe: pyautogui has a built-in safety feature. If the script is behaving unexpectedly, you can forcefully move your mouse cursor to any of the four corners of the screen to immediately stop the script with an exception.
-
-Permissions: On certain operating systems (especially macOS), you may need to grant accessibility permissions to your terminal or code editor for the script to be able to control the mouse and see the screen.
-
-License: This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the LICENSE file for details.
