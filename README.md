@@ -61,7 +61,7 @@ Edit `auto_scroller_clicker.py` and adjust the following variables in the **CONF
     - Run:
 
 ```bash
-python auto_scroller_clicker.py
+python auto_scroll_click.py
 ```
 
     - You have a 3-second countdown to focus your target application window.
