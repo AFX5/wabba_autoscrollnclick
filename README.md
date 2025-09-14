@@ -45,7 +45,7 @@ You will have a 3-second countdown to switch focus to your target application wi
 
 Stop the Script: To stop the automation, switch back to the terminal window and press Ctrl + C.
 
-⚠️ Important Warnings
+⚠️ Important Warnings:
 This script takes control of your mouse and keyboard. Do not leave it running unattended.
 Fail-Safe: pyautogui has a built-in safety feature. If the script is behaving unexpectedly, you can forcefully move your mouse cursor to any of the four corners of the screen to immediately stop the script with an exception.
 Permissions: On certain operating systems (especially macOS), you may need to grant accessibility permissions to your terminal or code editor for the script to be able to control the mouse and see the screen.
