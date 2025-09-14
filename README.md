@@ -33,6 +33,7 @@ IMAGE_TO_FIND: The filename of your target image.
 INTERVAL_SECONDS: The time to wait between actions.
 SCROLL_AMOUNT: The number of pixels to scroll (use a negative value to scroll down).
 CONFIDENCE_LEVEL: The accuracy for image matching (a value between 0.0 and 1.0). You might need to lower this from the default 0.8 if the target image has slight variations.
+
 Run the Script:
 Open the application you want to automate and make sure its window is active.
 Open a terminal or command prompt.
@@ -41,6 +42,7 @@ Execute the script using the command:
 python auto_scroll_click.py
 
 You will have a 3-second countdown to switch focus to your target application window.
+
 Stop the Script: To stop the automation, switch back to the terminal window and press Ctrl + C.
 
 ⚠️ Important Warnings
