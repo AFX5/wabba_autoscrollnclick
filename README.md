@@ -4,7 +4,9 @@ A simple yet powerful Python script that automates the process of scrolling thro
 
 > **To use with Wabbajack:**
 > Run Wabbajack and begin downloading your modlist. Once a new window opens and redirects you to the Nexus page, take a screenshot of the "SLOW DOWNLOAD" button. Save this image as `target_image.png` and follow the instructions below.
-
+> 
+⚠️ Warning:
+> Running this script to automate downloads might be against Nexus TOS, use this script at your own risk!
 ***
 
 ## What It Does
